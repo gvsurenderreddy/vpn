@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block revoke %}
+<h3>Revoke certifcate</h3>
+<form method='POST' action=''>{% csrf_token %}
+{{ form.as_p}}
+<input type='submit' value='Revoke cert' />
+
+</form>
+{% endblock %}
