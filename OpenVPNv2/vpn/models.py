@@ -12,9 +12,11 @@ class General(models.Model):
     general_project_name = models.TextField(max_length=200)
     general_server_ip = models.GenericIPAddressField()
     general_server_port = models.IntegerField()
+    general_project_status = models.TextField(max_length=20)
 
     def __unicode__(self):
-        return self.general_vpn_name
+        return unicode(self.general_server_port)
+
 
 class PathsVPN(models.Model):
     class Meta:
@@ -38,8 +40,3 @@ class Revoke(models.Model):
     certs_revoke_name = models.TextField(max_length=200)
     certs_revoke_status = models.TextField(max_length=200)
     certs_general = models.ForeignKey(General)
-class DropDwon(models.Model):
-        class Meta():
-            db_table = 'drop'
-        name = models.CharField(max_length=50)
-        codition = models.CharField(max_length=50)

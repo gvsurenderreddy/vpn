@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vpn',
+    'login',
     'bootstrapform',
     'bootstrap3',
     'crispy_forms',
@@ -74,7 +75,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR,
                               '/root/projects/OpenVPNv2/templates/',
-                              '/root/projects/OpenVPNv2/vpn/templates/',)],
+                              '/root/projects/OpenVPNv2/vpn/templates/',
+                              '/root/projects/OpenVPNv2/login/templates/')],
 
         'APP_DIRS': True,
         'OPTIONS': {

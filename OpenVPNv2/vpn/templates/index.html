@@ -60,7 +60,13 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../navbar/">Default</a></li>
             <li><a href="../navbar-static-top/">Static top</a></li>
-            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+
+              {% if username %}
+               <li class="active"><a href="{% url "logout" %}">Log out {{ username }}<span class="sr-only">(current)</span></a></li>
+              {% else %}
+            <li class="active"><a href="{% url "login" %}">Login<span class="sr-only">(current)</span></a></li>
+              {% endif %}
+
           </ul>
 
         </div><!--/.nav-collapse -->
@@ -69,22 +75,37 @@
 
     </nav>
 
-    {% block testmy %}{% endblock %}
+
+
+    {% block tabs_manage_vpn %}{% endblock %}
     <div class="container-fluid text-left">
              <div class="row content">
                     <div class="col-sm-2 sidenav">
 
-
  </div>
+
 
  <div class="col-md-8 text-left">
 {% block status_vpn %}{% endblock %}
 <p class="text-center"> {% block list_vpn %}{% endblock %} </p>
+
     </div>
 </div>
 
 </div>
+   <div class="col-sm-2 text-left">
 
+      </div>
+
+        <div class="container center">
+    <div class="row">
+         <div class="col-md-5 col-md-offset-4">
+         <form>
+         {%  block login %}{% endblock %}
+</form>
+    </div>
+    </div>
+    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

@@ -12,5 +12,6 @@ urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
     url(r'^vpn/', include('vpn.urls')),
+    url(r'^auth/', include('login.urls')),
     url(r'^', include('vpn.urls')),
 ]
